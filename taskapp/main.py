@@ -11,6 +11,8 @@ existing_items = crud.read_item()
 if not existing_items:
     crud.create_item('Task 1', 'Cover content on SQL')
     crud.create_item('Task 2', 'Grading code challenge')
+    crud.create_item('Task 3', 'Publish Scores')
+
 
 # Read the items
 items = crud.read_item()
@@ -32,3 +34,18 @@ items = crud.read_item()
 print("Reading Items after delete:")
 for item in items:
     print(item)
+
+
+# testing associated methods 
+crud.create_user('Joseph','joseph@gmail.com')
+crud.create_user('Alice','alice@gmail.com')
+
+crud.assing_task_to_user(1,1)
+crud.assing_task_to_user(1,3)
+crud.assing_task_to_user(2,3)
+
+# get the users tasks 
+user_tasks = crud.get_assigned_tasks(1)
+print("Check assigned tasks for Joseph:")
+for task in user_tasks:
+    print(task)
